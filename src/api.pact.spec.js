@@ -15,15 +15,8 @@ const mockProvider = new Pact({
 describe('API Pact test', () => {
   describe('retrieving a product', () => {
     test('ID 10 exists', async () => {
-      // Arrange
-      const expectedProduct = {
-        id: '10',
-        type: 'CREDIT_CARD',
-        name: '28 Degrees'
-      };
 
-      // Uncomment to see this fail
-      // const expectedProduct = { id: '10', type: 'CREDIT_CARD', name: '28 Degrees', price: 30.0, newField: 22}
+      const expectedProduct = { id: '10', type: 'CREDIT_CARD', name: '28 Degrees', price: 30.0}
 
       mockProvider
         .given('a product with ID 10 exists')
@@ -48,7 +41,7 @@ describe('API Pact test', () => {
         const product = await api.getProduct('10');
 
         // Assert - did we get the expected response
-        expect(product).toEqual(new Product(expectedProduct));
+        expect(product).toEqual(expectedProduct);
         return;
       });
     });
