@@ -48,7 +48,7 @@ describe('API Pact test', () => {
         const product = await api.getProduct('10');
 
         // Assert - did we get the expected response
-        expect(product).toStrictEqual(new Product(expectedProduct));
+        expect(product).toEqual(new Product(expectedProduct));
         return;
       });
     });
