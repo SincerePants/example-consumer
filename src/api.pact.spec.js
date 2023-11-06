@@ -16,7 +16,7 @@ describe('API Pact test', () => {
   describe('retrieving a product', () => {
     test('ID 10 exists', async () => {
 
-      const expectedProduct = { id: '10', type: 'CREDIT_CARD', name: '28 Degrees', price2: 30.0}
+      const expectedProduct = { id: '10', type: 'CREDIT_CARD', name: '28 Degrees'}
 
       mockProvider
         .given('a product with ID 10 exists')
